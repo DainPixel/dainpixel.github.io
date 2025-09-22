@@ -50,7 +50,7 @@ header .home-link {
 
 .full-menu a.about { color: red; }
 .full-menu a.project { color: orange; }
-.full-menu a.xprience { color: royalblue; }
+.full-menu a.experience { color: royalblue; }
 .full-menu a.education { color: green; }
 
 .full-menu a:hover {
@@ -61,52 +61,64 @@ header .home-link {
 main {
   flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.puzzle {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 6vw;
+.center-logo {
+  font-size: 8vw; /* 화면 크기에 비례 */
   font-weight: 800;
-  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Side Menus */
+.side-menu {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.side-menu.left {
+  left: 5%;
   align-items: flex-start;
 }
 
-
-.letter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.side-menu.right {
+  right: 5%;
+  align-items: flex-end;
 }
 
-.letter span {
-  line-height: 1;
-}
-
-.letter .menu {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 0.4em; /* 메인 글자 대비 비율 */
+.side-menu a {
   text-decoration: none;
-  margin-top: 0.5rem;
   font-weight: 600;
+  transition: transform 0.3s ease;
 }
 
-.letter.about span { color: red; }
-.letter.project span { color: orange; }
-.letter.xprience span { color: royalblue; }
-.letter.education span { color: green; }
+.side-menu a.about { color: red; }
+.side-menu a.project { color: orange; }
+.side-menu a.experience { color: royalblue; }
+.side-menu a.education { color: green; }
 
-.letter.about .menu { color: red; }
-.letter.project .menu { color: orange; }
-.letter.xprience .menu { color: royalblue; }
-.letter.education .menu { color: green; }
+.side-menu a:hover {
+  transform: scale(1.1);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(-50%) translateX(0); }
+  50%  { transform: translateY(-55%) translateX(5px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
 
 /* Footer */
 footer {
@@ -121,23 +133,14 @@ footer a {
   text-decoration: none;
 }
 
-/* 반응형 */
+/* Responsive */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+  .center-logo {
+    font-size: 12vw;
   }
 
-  .full-menu {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .puzzle {
-    font-size: 2rem;
-  }
-
-  .vertical-menu {
+  .side-menu {
+    font-size: 1.5rem;
     gap: 1rem;
   }
 }
