@@ -34,10 +34,18 @@ header .home-link { text-decoration: none; color: inherit; }
   color: black;
   transition: color 0.3s;
 }
+
+/* Header hover: 색상만 변경 */
 .full-menu a.about:hover { color: red; }
 .full-menu a.project:hover { color: orange; }
 .full-menu a.experience:hover { color: royalblue; }
 .full-menu a.education:hover { color: green; }
+
+/* Header는 애니메이션 절대 없음 */
+header .full-menu a {
+  animation: none !important;
+  transform: none !important;
+}
 
 /* 반응형: header 메뉴 폰트 크기 */
 @media (max-width: 768px) {
@@ -76,7 +84,9 @@ main {
   transition: color 0.3s;
 }
 
-/* Floating handwritten menus */
+/* =========================
+   Floating handwritten menus (Main 전용)
+   ========================= */
 .float-menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
@@ -88,10 +98,22 @@ main {
 }
 
 /* 위치 (중앙 알파벳 근처) */
-.about { top: 28%; left: 24%; animation: float1 6s ease-in-out infinite; }
-.project { bottom: 28%; left: 28%; animation: float2 7s ease-in-out infinite; }
-.experience { top: 28%; right: 24%; animation: float3 8s ease-in-out infinite; }
-.education { bottom: 28%; right: 28%; animation: float4 9s ease-in-out infinite; }
+.float-menu.about {
+  top: 28%; left: 24%;
+  animation: float1 6s ease-in-out infinite;
+}
+.float-menu.project {
+  bottom: 28%; left: 28%;
+  animation: float2 7s ease-in-out infinite;
+}
+.float-menu.experience {
+  top: 28%; right: 24%;
+  animation: float3 8s ease-in-out infinite;
+}
+.float-menu.education {
+  bottom: 28%; right: 28%;
+  animation: float4 9s ease-in-out infinite;
+}
 
 /* 각기 다른 방향 float */
 @keyframes float1 {
