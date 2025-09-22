@@ -74,18 +74,16 @@ main {
   align-items: center;
 }
 .center-logo {
+  cursor: default;  
   font-size: 8vw;
   font-weight: 800;
-  letter-spacing: -0.05em; /* 좁게 */
+  letter-spacing: 0.00em; /* 좁게 */
   white-space: nowrap;
   z-index: 2;
 }
 .center-logo .letter {
-  display: inline-block; 
   cursor: default;             /* 텍스트 커서 방지 */
   transition: color 0.3s;
-  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
-  border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
 }
 
 .center-logo .letter-a,
@@ -101,30 +99,30 @@ main {
 .float-menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   text-decoration: none;
   color: black;
   transition: transform 0.2s, color 0.2s;
-  padding: 1rem 1rem; /* 글자 주변에 여유 공간 추가 */
+  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
   border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
 }
 
 /* 위치 (중앙 알파벳 근처) */
 .float-menu.about {
-  top: 28%; left: 15%;
+  top: 26%; left: 15%;
   animation: float1 6s ease-in-out infinite;
 }
 .float-menu.project {
-  bottom: 28%; left: 35%;
+  bottom: 27%; left: 35%;
   animation: float2 7s ease-in-out infinite;
 }
 .float-menu.experience {
-  top: 28%; right: 24%;
+  top: 26%; right: 23%;
   animation: float3 8s ease-in-out infinite;
 }
 .float-menu.education {
-  bottom: 28%; right: 17%;
+  bottom: 26%; right: 10%;
   animation: float4 9s ease-in-out infinite;
 }
 
