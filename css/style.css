@@ -72,8 +72,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
-  border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
 }
 .center-logo {
   font-size: 8vw;
@@ -83,7 +81,18 @@ main {
   z-index: 2;
 }
 .center-logo .letter {
+  cursor: default;             /* 텍스트 커서 방지 */
+  display: inline-block;       /* padding 먹히게 */
   transition: color 0.3s;
+  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
+  border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
+}
+
+.center-logo .letter-a,
+.center-logo .letter-p,
+.center-logo .letter-x,
+.center-logo .letter-e {
+  cursor: pointer;   /* 손가락 모양 */
 }
 
 /* =========================
