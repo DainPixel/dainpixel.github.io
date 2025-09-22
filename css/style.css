@@ -25,10 +25,7 @@ header {
 header h1 { font-weight: 700; font-size: 1.5rem; }
 header .home-link { text-decoration: none; color: inherit; }
 
-.full-menu {
-  display: flex;
-  gap: 1rem;
-}
+.full-menu { display: flex; gap: 1rem; }
 .full-menu a {
   text-decoration: none;
   font-weight: 600;
@@ -56,14 +53,15 @@ main {
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
+  letter-spacing: 0.05em; /* 글자 간격 줄임 */
+  white-space: nowrap; /* 한 줄 유지 */
   z-index: 2;
-  position: relative;
 }
-.center-logo span {
+.center-logo .letter {
   transition: color 0.3s, text-shadow 0.3s;
 }
 
-/* 메뉴 공통 (메인에서 둥둥 떠다니는 메뉴) */
+/* 메인 메뉴 (로고 근처 배치 + 개별 애니메이션) */
 .menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
@@ -72,71 +70,31 @@ main {
   text-decoration: none;
   color: black;
   transition: transform 0.3s, color 0.3s;
-  animation: float 6s ease-in-out infinite;
 }
-.menu:hover {
-  transform: scale(1.2);
-}
+.menu:hover { transform: scale(1.2); }
 
-/* 둥둥 떠다니는 기본 애니메이션 */
-@keyframes float {
+/* 위치 */
+.about { top: 20%; left: 25%; animation: float1 6s ease-in-out infinite; }
+.project { bottom: 20%; left: 30%; animation: float2 7s ease-in-out infinite; }
+.experience { top: 20%; right: 25%; animation: float3 8s ease-in-out infinite; }
+.education { bottom: 20%; right: 30%; animation: float4 9s ease-in-out infinite; }
+
+/* 개별 float 애니메이션 */
+@keyframes float1 {
   0%, 100% { transform: translate(0,0); }
-  50% { transform: translate(5px, -8px); }
+  50% { transform: translate(-10px, -12px); }
 }
-
-/* 메뉴 위치 (대략 근처) */
-.about { top: 15%; left: 15%; }
-.project { bottom: 15%; left: 20%; }
-.experience { top: 15%; right: 15%; }
-.education { bottom: 15%; right: 20%; }
-
-/* Hover 연동 효과 */
-.full-menu a.about:hover,
-.menu.about:hover,
-.center-logo .a:hover {
-  color: red;
-  text-shadow: 0 0 10px red;
+@keyframes float2 {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(-8px, 14px); }
 }
-.full-menu a.about:hover ~ .center-logo .a,
-.menu.about:hover ~ .center-logo .a {
-  color: red;
-  text-shadow: 0 0 10px red;
+@keyframes float3 {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(12px, -10px); }
 }
-
-.full-menu a.project:hover,
-.menu.project:hover,
-.center-logo .p:hover {
-  color: orange;
-  text-shadow: 0 0 10px orange;
-}
-.full-menu a.project:hover ~ .center-logo .p,
-.menu.project:hover ~ .center-logo .p {
-  color: orange;
-  text-shadow: 0 0 10px orange;
-}
-
-.full-menu a.experience:hover,
-.menu.experience:hover,
-.center-logo .x:hover {
-  color: royalblue;
-  text-shadow: 0 0 10px royalblue;
-}
-.full-menu a.experience:hover ~ .center-logo .x,
-.menu.experience:hover ~ .center-logo .x {
-  color: royalblue;
-  text-shadow: 0 0 10px royalblue;
-}
-
-.full-menu a.education:hover,
-.menu.education:hover,
-.center-logo .e:hover {
-  color: green;
-  text-shadow: 0 0 10px green;
-}
-.full-menu a.education:hover ~ .center-logo .e,
-.menu.education:hover ~ .center-logo .e {
-  color: green;
-  text-shadow: 0 0 10px green;
+@keyframes float4 {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(10px, 12px); }
 }
 
 /* Footer */
@@ -150,6 +108,6 @@ footer a { color: #0077b6; text-decoration: none; }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .center-logo { font-size: 12vw; }
+  .center-logo { font-size: 12vw; letter-spacing: 0.02em; }
   .menu { font-size: 1.5rem; }
 }
