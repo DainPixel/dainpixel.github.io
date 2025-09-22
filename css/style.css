@@ -178,16 +178,13 @@ footer a { color: #0077b6; text-decoration: none; }
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .profile {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -195,12 +192,8 @@ footer a { color: #0077b6; text-decoration: none; }
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 50%; /* 동그란 프로필 사진 */
+  border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.profile-text {
-  max-width: 600px;
 }
 
 .profile-text h2 {
@@ -208,8 +201,31 @@ footer a { color: #0077b6; text-decoration: none; }
   margin-bottom: 1rem;
 }
 
-.profile-text p {
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.highlights li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  color: #444;
 }
+
+.about-section {
+  max-width: 800px;
+}
+.about-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
