@@ -72,11 +72,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
+  border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
 }
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
-  letter-spacing: 0.01em; /* 좁게 */
+  letter-spacing: -0.05em; /* 좁게 */
   white-space: nowrap;
   z-index: 2;
 }
@@ -95,6 +97,8 @@ main {
   text-decoration: none;
   color: black;
   transition: transform 0.3s, color 0.3s;
+  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
+  border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
 }
 
 /* 위치 (중앙 알파벳 근처) */
