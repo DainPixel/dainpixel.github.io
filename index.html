@@ -1,60 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DainPixel</title>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 구글 폰트 (메인: Montserrat, 사이드: Shadows Into Light) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- 상단 영역 -->
   <header>
     <h1><a href="index.html" class="home-link">Home</a></h1>
     <nav class="full-menu">
       <a href="about.html" class="about">About</a>
       <a href="project.html" class="project">Project</a>
-      <a href="xprience.html" class="xprience">Exprience</a>
+      <a href="experience.html" class="experience">Experience</a>
       <a href="education.html" class="education">Education</a>
     </nav>
   </header>
 
-  <!-- 메인 -->
-<main>
-  <div class="puzzle">
-    <div class="letter">
-      <span>D</span>
-    </div>
-    <div class="letter about">
-      <span>A</span>
-      <a href="about.html" class="menu">bout</a>
-    </div>
-    <div class="letter"><span>I</span></div>
-    <div class="letter"><span>N</span></div>
-    <div class="letter project">
-      <span>P</span>
-      <a href="project.html" class="menu">roject</a>
-    </div>
-    <div class="letter"><span>I</span></div>
-    <div class="letter xprience">
-      <span>X</span>
-      <a href="xprience.html" class="menu">prience</a>
-    </div>
-    <div class="letter education">
-      <span>E</span>
-      <a href="education.html" class="menu">ducation</a>
-    </div>
-    <div class="letter">
-      <span>L</span>
-    </div>
-  </div>
-</main>
+  <main>
+    <div class="center-logo">DAINPIXEL</div>
 
-  <!-- 하단 영역 -->
+    <!-- 좌우 사이드 메뉴 -->
+    <div class="side-menu left">
+      <a href="about.html" class="about">About</a>
+      <a href="experience.html" class="experience">Experience</a>
+    </div>
+
+    <div class="side-menu right">
+      <a href="project.html" class="project">Project</a>
+      <a href="education.html" class="education">Education</a>
+    </div>
+  </main>
+
   <footer>
     <p>📧 Contact: <a href="mailto:dainpixel@snu.ac.kr">dainpixel@snu.ac.kr</a></p>
     <p>© 2025 DainPixel</p>
   </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
