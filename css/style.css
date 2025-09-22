@@ -1,9 +1,5 @@
 /* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -26,36 +22,20 @@ header {
   top: 0;
   z-index: 100;
 }
-
-header h1 {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-header .home-link {
-  text-decoration: none;
-  color: inherit;
-}
+header h1 { font-weight: 700; font-size: 1.5rem; }
+header .home-link { text-decoration: none; color: inherit; }
 
 .full-menu {
   display: flex;
   gap: 1rem;
 }
-
 .full-menu a {
   text-decoration: none;
   font-weight: 600;
-  transition: 0.2s;
+  color: black; /* 기본 검정 */
+  transition: transform 0.3s, color 0.3s;
 }
-
-.full-menu a.about { color: red; }
-.full-menu a.project { color: orange; }
-.full-menu a.experience { color: royalblue; }
-.full-menu a.education { color: green; }
-
-.full-menu a:hover {
-  opacity: 0.7;
-}
+.full-menu a:hover { transform: scale(1.1); }
 
 /* Main */
 main {
@@ -65,7 +45,6 @@ main {
   align-items: center;
   position: relative;
 }
-
 .logo-area {
   position: relative;
   width: 70vw;
@@ -74,81 +53,90 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
   z-index: 2;
   position: relative;
 }
+.center-logo span {
+  transition: color 0.3s, text-shadow 0.3s;
+}
 
-/* 메뉴 공통 */
+/* 메뉴 공통 (메인에서 둥둥 떠다니는 메뉴) */
 .menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
   font-size: 2rem;
   font-weight: 600;
   text-decoration: none;
-  z-index: 1;
+  color: black;
+  transition: transform 0.3s, color 0.3s;
+  animation: float 6s ease-in-out infinite;
+}
+.menu:hover {
+  transform: scale(1.2);
 }
 
-.menu::before {
-  content: "";
-  position: absolute;
-  border-top: 2px dashed currentColor;
-  opacity: 0.7;
+/* 둥둥 떠다니는 기본 애니메이션 */
+@keyframes float {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(5px, -8px); }
 }
 
-/* About (좌상, A) */
-.about {
-  top: 10%;
-  left: 5%;
+/* 메뉴 위치 (대략 근처) */
+.about { top: 15%; left: 15%; }
+.project { bottom: 15%; left: 20%; }
+.experience { top: 15%; right: 15%; }
+.education { bottom: 15%; right: 20%; }
+
+/* Hover 연동 효과 */
+.full-menu a.about:hover,
+.menu.about:hover,
+.center-logo .a:hover {
   color: red;
+  text-shadow: 0 0 10px red;
 }
-.about::before {
-  width: 20vw;
-  top: 50%;
-  left: 100%;
-  transform: rotate(20deg);
+.full-menu a.about:hover ~ .center-logo .a,
+.menu.about:hover ~ .center-logo .a {
+  color: red;
+  text-shadow: 0 0 10px red;
 }
 
-/* Project (좌하, P) */
-.project {
-  bottom: 10%;
-  left: 5%;
+.full-menu a.project:hover,
+.menu.project:hover,
+.center-logo .p:hover {
   color: orange;
+  text-shadow: 0 0 10px orange;
 }
-.project::before {
-  width: 20vw;
-  top: 50%;
-  left: 100%;
-  transform: rotate(-20deg);
+.full-menu a.project:hover ~ .center-logo .p,
+.menu.project:hover ~ .center-logo .p {
+  color: orange;
+  text-shadow: 0 0 10px orange;
 }
 
-/* Experience (우상, X) */
-.experience {
-  top: 10%;
-  right: 5%;
+.full-menu a.experience:hover,
+.menu.experience:hover,
+.center-logo .x:hover {
   color: royalblue;
+  text-shadow: 0 0 10px royalblue;
 }
-.experience::before {
-  width: 20vw;
-  top: 50%;
-  right: 100%;
-  transform: rotate(-20deg);
+.full-menu a.experience:hover ~ .center-logo .x,
+.menu.experience:hover ~ .center-logo .x {
+  color: royalblue;
+  text-shadow: 0 0 10px royalblue;
 }
 
-/* Education (우하, E) */
-.education {
-  bottom: 10%;
-  right: 5%;
+.full-menu a.education:hover,
+.menu.education:hover,
+.center-logo .e:hover {
   color: green;
+  text-shadow: 0 0 10px green;
 }
-.education::before {
-  width: 20vw;
-  top: 50%;
-  right: 100%;
-  transform: rotate(20deg);
+.full-menu a.education:hover ~ .center-logo .e,
+.menu.education:hover ~ .center-logo .e {
+  color: green;
+  text-shadow: 0 0 10px green;
 }
 
 /* Footer */
@@ -158,19 +146,10 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
-
-footer a {
-  color: #0077b6;
-  text-decoration: none;
-}
+footer a { color: #0077b6; text-decoration: none; }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .center-logo {
-    font-size: 12vw;
-  }
-
-  .menu {
-    font-size: 1.5rem;
-  }
+  .center-logo { font-size: 12vw; }
+  .menu { font-size: 1.5rem; }
 }
