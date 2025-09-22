@@ -1,4 +1,4 @@
-// 중앙 로고 ↔ 메뉴 hover 동기화
+// 중앙 로고 ↔ 메인 메뉴 hover 연동
 function linkHover(letterSelector, menuSelector, color) {
   const letter = document.querySelector(letterSelector);
   const menu = document.querySelector(menuSelector);
@@ -22,7 +22,8 @@ function linkHover(letterSelector, menuSelector, color) {
   }
 }
 
-linkHover(".letter-a", ".about", "red");
-linkHover(".letter-p", ".project", "orange");
-linkHover(".letter-x", ".experience", "royalblue");
-linkHover(".letter-e", ".education", "green");
+// 연결 설정 (중앙 로고 ↔ 메인 메뉴만)
+linkHover(".letter-a", ".float-menu.about", "red");
+linkHover(".letter-p", ".float-menu.project", "orange");
+linkHover(".letter-x", ".float-menu.experience", "royalblue");
+linkHover(".letter-e", ".float-menu.education", "green");
