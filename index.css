@@ -70,37 +70,43 @@ main {
 
 .puzzle {
   display: flex;
-  gap: 0.3rem;
-  font-size: 3rem;
+  gap: 0.5rem;
+  font-size: 6vw;
   font-weight: 800;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.puzzle span.about { color: red; }
-.puzzle span.project { color: orange; }
-.puzzle span.xprience { color: royalblue; }
-.puzzle span.education { color: green; }
 
-/* Word puzzle 세로 네비게이션 */
-.vertical-menu {
+.letter {
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.vertical-menu a {
+.letter span {
+  line-height: 1;
+}
+
+.letter .menu {
   writing-mode: vertical-rl;
   text-orientation: upright;
-  font-weight: 600;
+  font-size: 0.4em; /* 메인 글자 대비 비율 */
   text-decoration: none;
+  margin-top: 0.5rem;
+  font-weight: 600;
 }
 
-.vertical-menu a.about { color: red; }
-.vertical-menu a.project { color: orange; }
-.vertical-menu a.xprience { color: royalblue; }
-.vertical-menu a.education { color: green; }
+.letter.about span { color: red; }
+.letter.project span { color: orange; }
+.letter.xprience span { color: royalblue; }
+.letter.education span { color: green; }
+
+.letter.about .menu { color: red; }
+.letter.project .menu { color: orange; }
+.letter.xprience .menu { color: royalblue; }
+.letter.education .menu { color: green; }
 
 /* Footer */
 footer {
