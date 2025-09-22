@@ -63,94 +63,92 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   position: relative;
-  overflow: hidden;
+}
+
+.logo-area {
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
-  text-align: center;
   z-index: 2;
-  position: relative; /* 연결선 기준점 */
-}
-
-/* 메뉴 공통 연결선 */
-.side-menu a {
   position: relative;
 }
 
-.side-menu a::before {
+/* 메뉴 공통 */
+.menu {
+  position: absolute;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.menu::before {
   content: "";
   position: absolute;
-  top: 50%;
-  width: 8vw;         /* 화면 크기에 비례한 선 길이 */
   border-top: 2px dashed currentColor;
-  transform-origin: left center;
   opacity: 0.7;
 }
 
-/* 각 메뉴별 방향 */
+/* About (좌상, A) */
+.about {
+  top: 10%;
+  left: 5%;
+  color: red;
+}
 .about::before {
+  width: 20vw;
+  top: 50%;
   left: 100%;
-  transform: rotate(15deg); /* 중앙 쪽으로 향하도록 회전 */
+  transform: rotate(20deg);
 }
 
-.experience::before {
-  left: 100%;
-  transform: rotate(-10deg);
+/* Project (좌하, P) */
+.project {
+  bottom: 10%;
+  left: 5%;
+  color: orange;
 }
-
 .project::before {
-  right: 100%;
-  transform: rotate(-15deg);
+  width: 20vw;
+  top: 50%;
+  left: 100%;
+  transform: rotate(-20deg);
 }
 
+/* Experience (우상, X) */
+.experience {
+  top: 10%;
+  right: 5%;
+  color: royalblue;
+}
+.experience::before {
+  width: 20vw;
+  top: 50%;
+  right: 100%;
+  transform: rotate(-20deg);
+}
+
+/* Education (우하, E) */
+.education {
+  bottom: 10%;
+  right: 5%;
+  color: green;
+}
 .education::before {
+  width: 20vw;
+  top: 50%;
   right: 100%;
-  transform: rotate(10deg);
-}
-
-.side-menu a.about { color: red; animation: float1 6s ease-in-out infinite; }
-.side-menu a.experience { color: royalblue; animation: float2 7s ease-in-out infinite; }
-.side-menu a.project { color: orange; animation: float3 8s ease-in-out infinite; }
-.side-menu a.education { color: green; animation: float4 9s ease-in-out infinite; }
-
-.side-menu a:hover {
-  transform: scale(1.1);
-}
-
-/* Floating animations (slightly different X/Y) */
-@keyframes float1 {
-  0%,100% { transform: translate(0,0); }
-  50% { transform: translate(-5px, -10px); }
-}
-
-@keyframes float2 {
-  0%,100% { transform: translate(0,0); }
-  50% { transform: translate(8px, 5px); }
-}
-
-@keyframes float3 {
-  0%,100% { transform: translate(0,0); }
-  50% { transform: translate(-7px, 6px); }
-}
-
-@keyframes float4 {
-  0%,100% { transform: translate(0,0); }
-  50% { transform: translate(6px, -8px); }
-}
-
-/* SVG connections */
-.connections {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
+  transform: rotate(20deg);
 }
 
 /* Footer */
@@ -172,8 +170,7 @@ footer a {
     font-size: 12vw;
   }
 
-  .side-menu {
+  .menu {
     font-size: 1.5rem;
-    gap: 2rem;
   }
 }
