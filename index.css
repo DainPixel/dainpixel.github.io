@@ -73,33 +73,43 @@ main {
   font-weight: 800;
   text-align: center;
   z-index: 2;
+  position: relative; /* 연결선 기준점 */
 }
 
-/* Side Menus */
-.side-menu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 2rem;
-  z-index: 3;
-}
-
-.side-menu.left {
-  left: 5%;
-  top: 30%;
-}
-
-.side-menu.right {
-  right: 5%;
-  top: 35%;
-}
-
+/* 메뉴 공통 연결선 */
 .side-menu a {
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.side-menu a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8vw;         /* 화면 크기에 비례한 선 길이 */
+  border-top: 2px dashed currentColor;
+  transform-origin: left center;
+  opacity: 0.7;
+}
+
+/* 각 메뉴별 방향 */
+.about::before {
+  left: 100%;
+  transform: rotate(15deg); /* 중앙 쪽으로 향하도록 회전 */
+}
+
+.experience::before {
+  left: 100%;
+  transform: rotate(-10deg);
+}
+
+.project::before {
+  right: 100%;
+  transform: rotate(-15deg);
+}
+
+.education::before {
+  right: 100%;
+  transform: rotate(10deg);
 }
 
 .side-menu a.about { color: red; animation: float1 6s ease-in-out infinite; }
