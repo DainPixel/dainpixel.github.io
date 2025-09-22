@@ -1,0 +1,32 @@
+.puzzle {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 3rem;
+  font-weight: 800;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle span.about { color: red; }
+.puzzle span.project { color: orange; }
+.puzzle span.xprience { color: royalblue; }
+.puzzle span.education { color: green; }
+
+.vertical-menu {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.vertical-menu a {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.vertical-menu a.about { color: red; }
+.vertical-menu a.project { color: orange; }
+.vertical-menu a.xprience { color: royalblue; }
+.vertical-menu a.education { color: green; }
