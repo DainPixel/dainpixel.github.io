@@ -30,16 +30,16 @@ header .home-link { text-decoration: none; color: inherit; }
   text-decoration: none;
   font-weight: 600;
   color: black;
-  transition: color 0.3s;
+  transition: color 0.3s; /* 색상만 변경 */
 }
 
-/* Header hover → 색상만 변경 */
+/* Header hover: 색상만 변경 */
 .full-menu a.about:hover { color: red; }
 .full-menu a.project:hover { color: orange; }
 .full-menu a.experience:hover { color: royalblue; }
 .full-menu a.education:hover { color: green; }
 
-/* Responsive: header 메뉴 글씨 크기 줄이기 */
+/* Responsive header 폰트 크기 */
 @media (max-width: 768px) {
   .full-menu a { font-size: 0.9rem; }
 }
@@ -66,15 +66,15 @@ main {
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  letter-spacing: 0.01em; /* 글자 간격 좁힘 */
+  white-space: nowrap; /* 한 줄 유지 */
   z-index: 2;
 }
 .center-logo .letter {
   transition: color 0.3s;
 }
 
-/* 메인 메뉴 */
+/* Floating menus */
 .menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
@@ -85,13 +85,13 @@ main {
   transition: transform 0.3s, color 0.3s;
 }
 
-/* 위치 (중앙 알파벳 근처) */
-.about { top: 30%; left: 20%; animation: float1 6s ease-in-out infinite; }
-.project { bottom: 30%; left: 25%; animation: float2 7s ease-in-out infinite; }
-.experience { top: 30%; right: 20%; animation: float3 8s ease-in-out infinite; }
-.education { bottom: 30%; right: 25%; animation: float4 9s ease-in-out infinite; }
+/* 위치 (근처로 배치) */
+.about { top: 28%; left: 22%; animation: float1 6s ease-in-out infinite; }
+.project { bottom: 28%; left: 28%; animation: float2 7s ease-in-out infinite; }
+.experience { top: 28%; right: 22%; animation: float3 8s ease-in-out infinite; }
+.education { bottom: 28%; right: 28%; animation: float4 9s ease-in-out infinite; }
 
-/* 각기 다른 방향으로 크게 둥둥 */
+/* 개별 float 애니메이션 */
 @keyframes float1 {
   0%,100% { transform: translate(0,0); }
   50% { transform: translate(-15px, -18px); }
@@ -118,7 +118,7 @@ footer {
 }
 footer a { color: #0077b6; text-decoration: none; }
 
-/* Responsive: 중앙 로고 글씨 크기 */
+/* Responsive: 중앙 로고 크기 */
 @media (max-width: 768px) {
   .center-logo { font-size: 12vw; }
   .menu { font-size: 1.5rem; }
