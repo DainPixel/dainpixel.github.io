@@ -81,6 +81,7 @@ main {
   z-index: 2;
 }
 .center-logo .letter {
+  display: inline-block; 
   cursor: default;             /* 텍스트 커서 방지 */
   transition: color 0.3s;
   padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
@@ -100,22 +101,22 @@ main {
 .float-menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 700;
   text-decoration: none;
   color: black;
-  transition: transform 0.3s, color 0.3s;
-  padding: 0.5rem 1rem; /* 글자 주변에 여유 공간 추가 */
+  transition: transform 0.2s, color 0.2s;
+  padding: 1rem 1rem; /* 글자 주변에 여유 공간 추가 */
   border-radius: 8px;   /* 둥근 모서리로 자연스럽게 */
 }
 
 /* 위치 (중앙 알파벳 근처) */
 .float-menu.about {
-  top: 28%; left: 24%;
+  top: 28%; left: 15%;
   animation: float1 6s ease-in-out infinite;
 }
 .float-menu.project {
-  bottom: 28%; left: 28%;
+  bottom: 28%; left: 35%;
   animation: float2 7s ease-in-out infinite;
 }
 .float-menu.experience {
@@ -123,7 +124,7 @@ main {
   animation: float3 8s ease-in-out infinite;
 }
 .float-menu.education {
-  bottom: 28%; right: 28%;
+  bottom: 28%; right: 17%;
   animation: float4 9s ease-in-out infinite;
 }
 
@@ -147,7 +148,7 @@ main {
 
 /* 반응형: 중앙 로고 */
 @media (max-width: 768px) {
-  .center-logo { font-size: 12vw; letter-spacing: 0; }
+  .center-logo { font-size: 12vw; letter-spacing: -1; }
   .float-menu { font-size: 1.5rem; }
 }
 
