@@ -10,7 +10,9 @@ body {
   color: #333;
 }
 
-/* Header */
+/* =========================
+   Header (독립, 애니메이션 없음)
+   ========================= */
 header {
   display: flex;
   justify-content: space-between;
@@ -30,16 +32,14 @@ header .home-link { text-decoration: none; color: inherit; }
   text-decoration: none;
   font-weight: 600;
   color: black;
-  transition: color 0.3s; /* 색상만 변경 */
+  transition: color 0.3s;
 }
-
-/* Header hover: 색상만 변경 */
 .full-menu a.about:hover { color: red; }
 .full-menu a.project:hover { color: orange; }
 .full-menu a.experience:hover { color: royalblue; }
 .full-menu a.education:hover { color: green; }
 
-/* Responsive header 폰트 크기 */
+/* 반응형: header 메뉴 폰트 크기 */
 @media (max-width: 768px) {
   .full-menu a { font-size: 0.9rem; }
 }
@@ -47,7 +47,9 @@ header .home-link { text-decoration: none; color: inherit; }
   .full-menu a { font-size: 0.75rem; }
 }
 
-/* Main */
+/* =========================
+   Main
+   ========================= */
 main {
   flex: 1;
   display: flex;
@@ -66,16 +68,16 @@ main {
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
-  letter-spacing: 0.01em; /* 글자 간격 좁힘 */
-  white-space: nowrap; /* 한 줄 유지 */
+  letter-spacing: 0.01em; /* 좁게 */
+  white-space: nowrap;
   z-index: 2;
 }
 .center-logo .letter {
   transition: color 0.3s;
 }
 
-/* Floating menus */
-.menu {
+/* Floating handwritten menus */
+.float-menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
   font-size: 2rem;
@@ -85,13 +87,13 @@ main {
   transition: transform 0.3s, color 0.3s;
 }
 
-/* 위치 (근처로 배치) */
-.about { top: 28%; left: 22%; animation: float1 6s ease-in-out infinite; }
+/* 위치 (중앙 알파벳 근처) */
+.about { top: 28%; left: 24%; animation: float1 6s ease-in-out infinite; }
 .project { bottom: 28%; left: 28%; animation: float2 7s ease-in-out infinite; }
-.experience { top: 28%; right: 22%; animation: float3 8s ease-in-out infinite; }
+.experience { top: 28%; right: 24%; animation: float3 8s ease-in-out infinite; }
 .education { bottom: 28%; right: 28%; animation: float4 9s ease-in-out infinite; }
 
-/* 개별 float 애니메이션 */
+/* 각기 다른 방향 float */
 @keyframes float1 {
   0%,100% { transform: translate(0,0); }
   50% { transform: translate(-15px, -18px); }
@@ -109,7 +111,15 @@ main {
   50% { transform: translate(15px, 18px); }
 }
 
-/* Footer */
+/* 반응형: 중앙 로고 */
+@media (max-width: 768px) {
+  .center-logo { font-size: 12vw; letter-spacing: 0; }
+  .float-menu { font-size: 1.5rem; }
+}
+
+/* =========================
+   Footer
+   ========================= */
 footer {
   background: #f2f2f2;
   text-align: center;
@@ -117,9 +127,3 @@ footer {
   font-size: 0.9rem;
 }
 footer a { color: #0077b6; text-decoration: none; }
-
-/* Responsive: 중앙 로고 크기 */
-@media (max-width: 768px) {
-  .center-logo { font-size: 12vw; }
-  .menu { font-size: 1.5rem; }
-}
