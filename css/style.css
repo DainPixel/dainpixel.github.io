@@ -25,14 +25,27 @@ header {
 header h1 { font-weight: 700; font-size: 1.5rem; }
 header .home-link { text-decoration: none; color: inherit; }
 
-.full-menu { display: flex; gap: 1rem; }
+.full-menu { display: flex; gap: 1rem; flex-wrap: wrap; }
 .full-menu a {
   text-decoration: none;
   font-weight: 600;
-  color: black; /* 기본 검정 */
-  transition: transform 0.3s, color 0.3s;
+  color: black;
+  transition: color 0.3s;
 }
-.full-menu a:hover { transform: scale(1.1); }
+
+/* Header hover → 색상만 변경 */
+.full-menu a.about:hover { color: red; }
+.full-menu a.project:hover { color: orange; }
+.full-menu a.experience:hover { color: royalblue; }
+.full-menu a.education:hover { color: green; }
+
+/* Responsive: header 메뉴 글씨 크기 줄이기 */
+@media (max-width: 768px) {
+  .full-menu a { font-size: 0.9rem; }
+}
+@media (max-width: 480px) {
+  .full-menu a { font-size: 0.75rem; }
+}
 
 /* Main */
 main {
@@ -53,15 +66,15 @@ main {
 .center-logo {
   font-size: 8vw;
   font-weight: 800;
-  letter-spacing: 0.05em; /* 글자 간격 줄임 */
-  white-space: nowrap; /* 한 줄 유지 */
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   z-index: 2;
 }
 .center-logo .letter {
-  transition: color 0.3s, text-shadow 0.3s;
+  transition: color 0.3s;
 }
 
-/* 메인 메뉴 (로고 근처 배치 + 개별 애니메이션) */
+/* 메인 메뉴 */
 .menu {
   position: absolute;
   font-family: 'Shadows Into Light', cursive;
@@ -71,30 +84,29 @@ main {
   color: black;
   transition: transform 0.3s, color 0.3s;
 }
-.menu:hover { transform: scale(1.2); }
 
-/* 위치 */
-.about { top: 20%; left: 25%; animation: float1 6s ease-in-out infinite; }
-.project { bottom: 20%; left: 30%; animation: float2 7s ease-in-out infinite; }
-.experience { top: 20%; right: 25%; animation: float3 8s ease-in-out infinite; }
-.education { bottom: 20%; right: 30%; animation: float4 9s ease-in-out infinite; }
+/* 위치 (중앙 알파벳 근처) */
+.about { top: 30%; left: 20%; animation: float1 6s ease-in-out infinite; }
+.project { bottom: 30%; left: 25%; animation: float2 7s ease-in-out infinite; }
+.experience { top: 30%; right: 20%; animation: float3 8s ease-in-out infinite; }
+.education { bottom: 30%; right: 25%; animation: float4 9s ease-in-out infinite; }
 
-/* 개별 float 애니메이션 */
+/* 각기 다른 방향으로 크게 둥둥 */
 @keyframes float1 {
-  0%, 100% { transform: translate(0,0); }
-  50% { transform: translate(-10px, -12px); }
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(-15px, -18px); }
 }
 @keyframes float2 {
-  0%, 100% { transform: translate(0,0); }
-  50% { transform: translate(-8px, 14px); }
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(-12px, 20px); }
 }
 @keyframes float3 {
-  0%, 100% { transform: translate(0,0); }
-  50% { transform: translate(12px, -10px); }
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(18px, -15px); }
 }
 @keyframes float4 {
-  0%, 100% { transform: translate(0,0); }
-  50% { transform: translate(10px, 12px); }
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(15px, 18px); }
 }
 
 /* Footer */
@@ -106,8 +118,8 @@ footer {
 }
 footer a { color: #0077b6; text-decoration: none; }
 
-/* Responsive */
+/* Responsive: 중앙 로고 글씨 크기 */
 @media (max-width: 768px) {
-  .center-logo { font-size: 12vw; letter-spacing: 0.02em; }
+  .center-logo { font-size: 12vw; }
   .menu { font-size: 1.5rem; }
 }
