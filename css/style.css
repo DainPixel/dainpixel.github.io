@@ -114,7 +114,7 @@ main {
   animation: float1 6s ease-in-out infinite;
 }
 .float-menu.project {
-  bottom: 27%; left: 35%;
+  bottom: 27%; left: 37%;
   animation: float2 7s ease-in-out infinite;
 }
 .float-menu.experience {
