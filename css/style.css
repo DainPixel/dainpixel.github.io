@@ -1,1 +1,176 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+header .home-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.full-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.full-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.full-menu a.about { color: red; }
+.full-menu a.project { color: orange; }
+.full-menu a.experience { color: royalblue; }
+.full-menu a.education { color: green; }
+
+.full-menu a:hover {
+  opacity: 0.7;
+}
+
+/* Main */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo-area {
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-logo {
+  font-size: 8vw;
+  font-weight: 800;
+  z-index: 2;
+  position: relative;
+}
+
+/* 메뉴 공통 */
+.menu {
+  position: absolute;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  border-top: 2px dashed currentColor;
+  opacity: 0.7;
+}
+
+/* About (좌상, A) */
+.about {
+  top: 10%;
+  left: 5%;
+  color: red;
+}
+.about::before {
+  width: 20vw;
+  top: 50%;
+  left: 100%;
+  transform: rotate(20deg);
+}
+
+/* Project (좌하, P) */
+.project {
+  bottom: 10%;
+  left: 5%;
+  color: orange;
+}
+.project::before {
+  width: 20vw;
+  top: 50%;
+  left: 100%;
+  transform: rotate(-20deg);
+}
+
+/* Experience (우상, X) */
+.experience {
+  top: 10%;
+  right: 5%;
+  color: royalblue;
+}
+.experience::before {
+  width: 20vw;
+  top: 50%;
+  right: 100%;
+  transform: rotate(-20deg);
+}
+
+/* Education (우하, E) */
+.education {
+  bottom: 10%;
+  right: 5%;
+  color: green;
+}
+.education::before {
+  width: 20vw;
+  top: 50%;
+  right: 100%;
+  transform: rotate(20deg);
+}
+
+/* Footer */
+footer {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .center-logo {
+    font-size: 12vw;
+  }
+
+  .menu {
+    font-size: 1.5rem;
+  }
+}
