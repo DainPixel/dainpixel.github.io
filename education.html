@@ -1,1 +1,56 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Education | DainPixel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
+<body>
+  <header> ... </header>
+
+  <main class="education-page">
+    <div class="edu-card">
+      <div class="edu-title">서울대학교 (Seoul National University)</div>
+      <div class="edu-subtitle">2024 – Present</div>
+      <div class="edu-details">
+        인지과학 협동과정 석사과정 (M.S. in Cognitive Science, Interdisciplinary Program)<br>
+        • Advisor: 윤명환 교수 (산업공학과)<br>
+        • Laboratory: Human Interface Systems Lab<br><br>
+        <em>Thesis:</em> iteraTree — Supporting Iterative Prompt Refinement for Text-to-Image Generative AI Systems
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-title">이화여자대학교 (Ewha Womans University)</div>
+      <div class="edu-subtitle">2019 – 2024</div>
+      <div class="edu-details">
+        융합콘텐츠 (B.S. in Content Convergence), 소프트웨어 (B.S.E. in Software), 심리학 (B.A. in Psychology)<br>
+        • 총 158학점 이수, GPA 4.04/4.5 (95/100)
+      </div>
+    </div>
+
+    <div id="more-section">
+      <!-- 고등학교 이하 내용 -->
+      <div class="edu-card">
+        <div class="edu-title">서울과학고등학교 (Seoul Science High School)</div>
+        <div class="edu-subtitle">2016 – 2019</div>
+        <div class="edu-details">내용 추가 예정</div>
+      </div>
+      <!-- 필요 시 계속 추가 -->
+    </div>
+
+    <button class="show-more-btn" id="toggle-btn">Show more ▼</button>
+  </main>
+
+  <footer> ... </footer>
+
+  <script>
+    const btn = document.getElementById('toggle-btn');
+    const more = document.getElementById('more-section');
+    let expanded = false;
+    btn.addEventListener('click', () => {
+      expanded = !expanded;
+      more.style.display = expanded ? 'block' : 'none';
+      btn.textContent = expanded ? 'Show less ▲' : 'Show more ▼';
+    });
+  </script>
+</body>
