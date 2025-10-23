@@ -13,7 +13,7 @@
 
   <main class="education-page">
     <div class="edu-timeline">
-      
+
       <!-- 대학원 -->
       <div class="edu-card">
         <div class="edu-year">2024 – Present</div>
@@ -40,8 +40,9 @@
         </div>
       </div>
 
-      <!-- 고등학교 이하 (처음에는 숨김) -->
-      <div id="more-section">
+      <!-- 고등학교 이하 (초기엔 숨김) -->
+      <div id="more-section" style="display: none;">
+
         <div class="edu-card">
           <div class="edu-year">2016 – 2019</div>
           <div class="edu-content">
@@ -76,7 +77,9 @@
       </div>
 
       <!-- Show more 버튼 -->
-      <button class="show-more-btn" id="toggle-btn">Show more ▼</button>
+      <div class="edu-showmore">
+        <button class="show-more-btn" id="toggle-btn">Show more ▼</button>
+      </div>
 
     </div>
   </main>
@@ -89,6 +92,7 @@
     const btn = document.getElementById('toggle-btn');
     const more = document.getElementById('more-section');
     let expanded = false;
+
     btn.addEventListener('click', () => {
       expanded = !expanded;
       more.style.display = expanded ? 'block' : 'none';
