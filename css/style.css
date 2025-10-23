@@ -237,13 +237,13 @@ footer a { color: #0077b6; text-decoration: none; }
 
 
 /* ==================================================
-   Education Timeline Style
+   Education Timeline (no dots, centered button)
    ================================================== */
 .edu-timeline {
   position: relative;
-  margin-left: 60px; /* 라인과 여백 확보 */
+  margin-left: 60px;
   padding-left: 20px;
-  border-left: 3px solid #d0d0d0; /* 세로선 */
+  border-left: 3px solid #d0d0d0;
 }
 
 .edu-card {
@@ -253,17 +253,10 @@ footer a { color: #0077b6; text-decoration: none; }
   gap: 1.5rem;
 }
 
-.edu-card::before {
-  content: "";
-  position: absolute;
-  left: -31px; /* 라인 위 점(dot) 위치 */
-  top: 12px;
-  width: 12px;
-  height: 12px;
-  background-color: #222;
-  border-radius: 50%;
-}
+/* ❌ dot 제거 → 이전 ::before 삭제 */
+/* .edu-card::before { ... } 제거 */
 
+/* 연도 스타일 */
 .edu-year {
   flex-shrink: 0;
   width: 120px;
@@ -272,6 +265,7 @@ footer a { color: #0077b6; text-decoration: none; }
   color: #555;
 }
 
+/* 카드 스타일 */
 .edu-content {
   background-color: #fff;
   border-radius: 12px;
@@ -298,41 +292,51 @@ footer a { color: #0077b6; text-decoration: none; }
   color: #444;
 }
 
-/* ========== Show More 버튼 스타일 개선 ========== */
+/* 반응형 (모바일 시 세로 정렬) */
+@media (max-width: 600px) {
+  .edu-timeline {
+    margin-left: 30px;
+  }
+  .edu-card {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .edu-year {
+    width: auto;
+    margin-bottom: 4px;
+  }
+}
+
+/* 중앙 정렬 버튼 */
 .edu-showmore {
-  margin-left: 60px;
-  padding-left: 20px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .show-more-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 30px;
-  background: white;
-  color: #222;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 12px 28px;
+  background: #fff;
+  color: #000;
   font-weight: 600;
   border: 2px solid #222;
-  border-radius: 25px;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 .show-more-btn:hover {
   background: #222;
-  color: white;
+  color: #fff;
   transform: translateY(-2px);
 }
 
-/* 버튼 앞에도 라인 연속성 유지 */
-.edu-showmore::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  bottom: 50%;
-  border-left: 3px solid #d0d0d0;
-}
 
 /* 반응형 (모바일 시 세로 정렬로 전환) */
 @media (max-width: 600px) {
