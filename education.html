@@ -40,9 +40,8 @@
         </div>
       </div>
 
-      <!-- 고등학교 이하 (초기엔 숨김) -->
+      <!-- 고등학교 이하 (펼침 대상) -->
       <div id="more-section" style="display: none;">
-
         <div class="edu-card">
           <div class="edu-year">2016 – 2019</div>
           <div class="edu-content">
@@ -76,12 +75,13 @@
         </div>
       </div>
 
-      <!-- Show more 버튼 -->
-      <div class="edu-showmore">
-        <button class="show-more-btn" id="toggle-btn">Show more ▼</button>
-      </div>
-
     </div>
+
+    <!-- 중앙 정렬된 Show more 버튼 -->
+    <div class="edu-showmore">
+      <button class="show-more-btn" id="toggle-btn">Show more ▼</button>
+    </div>
+
   </main>
 
   <footer>
@@ -97,6 +97,13 @@
       expanded = !expanded;
       more.style.display = expanded ? 'block' : 'none';
       btn.textContent = expanded ? 'Show less ▲' : 'Show more ▼';
+
+      // 스크롤 자연스럽게 아래로 이동
+      if (expanded) {
+        setTimeout(() => {
+          more.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200);
+      }
     });
   </script>
 </body>
