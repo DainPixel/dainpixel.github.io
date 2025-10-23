@@ -2,15 +2,25 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Education | DainPixel</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Header (index와 동일 구조) -->
   <header>
-    <h1>Education</h1>
+    <h1><a href="index.html" class="home-link">DainPixel</a></h1>
+    <nav class="full-menu">
+      <a href="about.html" class="about">About</a>
+      <a href="project.html" class="project">Project</a>
+      <a href="experience.html" class="experience">Experience</a>
+      <a href="education.html" class="education">Education</a>
+    </nav>
   </header>
 
+  <!-- Main -->
   <main class="education-page">
     <div class="edu-timeline">
 
@@ -74,20 +84,21 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <!-- 중앙 정렬된 Show more 버튼 -->
     <div class="edu-showmore">
       <button class="show-more-btn" id="toggle-btn">Show more ▼</button>
     </div>
-
   </main>
 
+  <!-- Footer -->
   <footer>
+    <p>📧 Contact: <a href="mailto:dainpixel@gmail.com">dainpixel@gmail.com</a> | <a href="mailto:dainpixel@snu.ac.kr">dainpixel@snu.ac.kr</a></p>
     <p>© 2025 DainPixel</p>
   </footer>
 
+  <!-- Script -->
   <script>
     const btn = document.getElementById('toggle-btn');
     const more = document.getElementById('more-section');
@@ -98,7 +109,6 @@
       more.style.display = expanded ? 'block' : 'none';
       btn.textContent = expanded ? 'Show less ▲' : 'Show more ▼';
 
-      // 스크롤 자연스럽게 아래로 이동
       if (expanded) {
         setTimeout(() => {
           more.scrollIntoView({ behavior: 'smooth', block: 'start' });
