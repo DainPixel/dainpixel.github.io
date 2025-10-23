@@ -237,8 +237,21 @@ footer a { color: #0077b6; text-decoration: none; }
 
 
 /* ==================================================
-   Education Timeline (no dots, centered button)
+   Education Page Overrides (홈에는 영향 X)
    ================================================== */
+
+/* education 페이지 전용 메인 구조 덮어쓰기 */
+.education-page {
+  display: block !important; /* index의 flex 무효화 */
+  align-items: initial !important;
+  justify-content: initial !important;
+  padding: 3rem 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 타임라인 */
 .edu-timeline {
   position: relative;
   margin-left: 60px;
@@ -246,6 +259,12 @@ footer a { color: #0077b6; text-decoration: none; }
   border-left: 3px solid #d0d0d0;
 }
 
+/* Dot 완전 제거 */
+.edu-card::before {
+  content: none !important;
+}
+
+/* 카드 정렬 */
 .edu-card {
   position: relative;
   margin-bottom: 40px;
@@ -253,10 +272,7 @@ footer a { color: #0077b6; text-decoration: none; }
   gap: 1.5rem;
 }
 
-/* ❌ dot 제거 → 이전 ::before 삭제 */
-/* .edu-card::before { ... } 제거 */
-
-/* 연도 스타일 */
+/* 연도 */
 .edu-year {
   flex-shrink: 0;
   width: 120px;
@@ -265,7 +281,7 @@ footer a { color: #0077b6; text-decoration: none; }
   color: #555;
 }
 
-/* 카드 스타일 */
+/* 내용 카드 */
 .edu-content {
   background-color: #fff;
   border-radius: 12px;
@@ -274,25 +290,53 @@ footer a { color: #0077b6; text-decoration: none; }
   flex: 1;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .edu-content:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
+/* 제목·세부 내용 */
 .edu-title {
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 6px;
 }
-
 .edu-details {
   font-size: 0.95rem;
   line-height: 1.5;
   color: #444;
 }
 
-/* 반응형 (모바일 시 세로 정렬) */
+/* Show more 중앙 정렬 */
+.edu-showmore {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* 버튼 스타일 */
+.show-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: 2px solid #222;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+.show-more-btn:hover {
+  background: #222;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* 반응형 */
 @media (max-width: 600px) {
   .edu-timeline {
     margin-left: 30px;
@@ -307,35 +351,8 @@ footer a { color: #0077b6; text-decoration: none; }
   }
 }
 
-/* 중앙 정렬 버튼 */
-.edu-showmore {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
-}
 
-.show-more-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 12px 28px;
-  background: #fff;
-  color: #000;
-  font-weight: 600;
-  border: 2px solid #222;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
 
-.show-more-btn:hover {
-  background: #222;
-  color: #fff;
-  transform: translateY(-2px);
-}
 
 
 /* 반응형 (모바일 시 세로 정렬로 전환) */
