@@ -236,76 +236,84 @@ footer a { color: #0077b6; text-decoration: none; }
 
 
 
-/* ===================================================
-   Education Page
-   =================================================== */
-.education-page {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+/* ==================================================
+   Education Timeline Style
+   ================================================== */
+.edu-timeline {
+  position: relative;
+  margin-left: 60px; /* 라인과 여백 확보 */
+  padding-left: 20px;
+  border-left: 3px solid #d0d0d0; /* 세로선 */
 }
 
 .edu-card {
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 1.5rem 2rem;
-  transition: all 0.25s ease;
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.edu-card:hover {
+.edu-card::before {
+  content: "";
+  position: absolute;
+  left: -31px; /* 라인 위 점(dot) 위치 */
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.edu-year {
+  flex-shrink: 0;
+  width: 120px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.edu-content {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem 1.5rem;
+  flex: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edu-content:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .edu-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
-}
-
-.edu-subtitle {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .edu-details {
   font-size: 0.95rem;
   line-height: 1.5;
+  color: #444;
 }
 
-.show-more-btn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 10px 24px;
-  border-radius: 30px;
-  border: none;
-  background-color: #222;
-  color: white;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.show-more-btn:hover {
-  background-color: #555;
-}
-
-/* 숨겨질 섹션 */
-#more-section {
-  display: none;
-}
-
-/* 반응형 */
+/* 반응형 (모바일 시 세로 정렬로 전환) */
 @media (max-width: 600px) {
-  .edu-card {
-    padding: 1rem 1.25rem;
+  .edu-timeline {
+    margin-left: 30px;
   }
-  .edu-title { font-size: 1.1rem; }
-  .edu-subtitle { font-size: 0.9rem; }
+  .edu-card {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .edu-year {
+    width: auto;
+    margin-bottom: 4px;
+  }
+  .edu-card::before {
+    left: -22px;
+    top: 10px;
+  }
 }
-
 
