@@ -298,6 +298,42 @@ footer a { color: #0077b6; text-decoration: none; }
   color: #444;
 }
 
+/* ========== Show More 버튼 스타일 개선 ========== */
+.edu-showmore {
+  margin-left: 60px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.show-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 30px;
+  background: white;
+  color: #222;
+  font-weight: 600;
+  border: 2px solid #222;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background: #222;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 버튼 앞에도 라인 연속성 유지 */
+.edu-showmore::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  bottom: 50%;
+  border-left: 3px solid #d0d0d0;
+}
+
 /* 반응형 (모바일 시 세로 정렬로 전환) */
 @media (max-width: 600px) {
   .edu-timeline {
