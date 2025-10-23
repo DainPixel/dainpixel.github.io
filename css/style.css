@@ -229,3 +229,83 @@ footer a { color: #0077b6; text-decoration: none; }
   line-height: 1.6;
 }
 
+
+
+
+
+
+
+
+/* ===================================================
+   Education Page
+   =================================================== */
+.education-page {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.edu-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  transition: all 0.25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.edu-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.edu-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.edu-details {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.show-more-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  background-color: #222;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #555;
+}
+
+/* 숨겨질 섹션 */
+#more-section {
+  display: none;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .edu-card {
+    padding: 1rem 1.25rem;
+  }
+  .edu-title { font-size: 1.1rem; }
+  .edu-subtitle { font-size: 0.9rem; }
+}
+
+
